@@ -57,3 +57,7 @@ Text preprocessing, TF-IDF vectorization, and the training and comparison of sev
 pip install numpy pandas matplotlib seaborn scikit-learn statsmodels nltk textblob wordcloud beautifulsoup4
 jupyter notebook IMDB_Film_Yorumu_Projesi.ipynb
 ```
+
+## License
+
+This project is licensed under the MIT License.
