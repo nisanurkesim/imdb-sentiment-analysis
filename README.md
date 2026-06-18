@@ -1,29 +1,29 @@
-# IMDB Film Yorumu Duygu Analizi
+# IMDB Movie Review Sentiment Analysis
 
-IMDB film yorumları üzerinde **ikili duygu sınıflandırması** (pozitif / negatif) yapan, yedi farklı makine öğrenmesi algoritmasını karşılaştırmalı olarak değerlendiren bir çalışma.
+A study performing **binary sentiment classification** (positive / negative) on IMDB movie reviews, comparatively evaluating seven different machine learning algorithms.
 
-## İçerik
+## Overview
 
-50.000 yorumluk dengeli IMDB veri seti üzerinde metin ön işleme, TF-IDF vektörizasyonu ve yedi sınıflandırma algoritmasının eğitimi ile karşılaştırması yapılmıştır. Lojistik regresyon hem `statsmodels` (istatistiksel yorumlanabilirlik için) hem de `sklearn` ile modellenmiş; GridSearchCV ile hiperparametre optimizasyonu, 10-katlı çapraz doğrulama, ROC/PR eğrileri ve hata analizi uygulanmıştır.
+Text preprocessing, TF-IDF vectorization, and the training and comparison of seven classification algorithms were carried out on a balanced IMDB dataset of 50,000 reviews. Logistic regression was modeled with both `statsmodels` (for statistical interpretability) and `sklearn`; hyperparameter optimization with GridSearchCV, 10-fold cross-validation, ROC/PR curves, and error analysis were applied.
 
-## Kullanılan Modeller
+## Models Used
 
-| Grup | Modeller | Optimizasyon |
-|------|----------|--------------|
-| Optimize | Lojistik Regresyon · Naive Bayes · SVM | GridSearchCV |
-| Baseline | MLP · CART · Random Forest · Gradient Boosting | Varsayılan parametreler |
+| Group | Models | Optimization |
+|-------|--------|--------------|
+| Optimized | Logistic Regression · Naive Bayes · SVM | GridSearchCV |
+| Baseline | MLP · CART · Random Forest · Gradient Boosting | Default parameters |
 
-## Sonuçlar
+## Results
 
-**Optimize modeller**
+**Optimized models**
 
 | Model | Accuracy | F1-Score | ROC-AUC |
 |-------|----------|----------|---------|
-| Lojistik Regresyon | 0.9063 | 0.9067 | 0.9671 |
+| Logistic Regression | 0.9063 | 0.9067 | 0.9671 |
 | SVM | 0.9049 | 0.9053 | 0.9672 |
 | Naive Bayes | 0.8832 | 0.8839 | 0.9511 |
 
-**Baseline modeller**
+**Baseline models**
 
 | Model | Accuracy | F1-Score | ROC-AUC |
 |-------|----------|----------|---------|
@@ -32,26 +32,26 @@ IMDB film yorumları üzerinde **ikili duygu sınıflandırması** (pozitif / ne
 | Gradient Boosting | 0.8119 | 0.8214 | 0.8993 |
 | CART | 0.7216 | 0.7214 | 0.7216 |
 
-En iyi model olarak **Lojistik Regresyon** önerilmektedir: en yüksek Accuracy/F1 skorunu vermesinin yanında `statsmodels` ile katsayıların istatistiksel olarak (p-değeri, güven aralığı, Pseudo-R²) yorumlanabilmesi avantaj sağlamaktadır.
+**Logistic Regression** is recommended as the best model: in addition to achieving the highest Accuracy/F1 scores, it offers the advantage of statistically interpretable coefficients via `statsmodels` (p-value, confidence interval, Pseudo-R²).
 
-## İş Akışı
+## Workflow
 
-1. Veri yükleme ve keşifsel veri analizi (EDA)
-2. Metin ön işleme (HTML temizleme, tokenizasyon, stop word eleme, lemmatization)
-3. Kelime bulutu ve frekans analizi
-4. TF-IDF vektörizasyonu (bigram, 50.000 özellik) ve veri bölme
-5. Model eğitimi, optimizasyon ve çapraz doğrulama
-6. Model değerlendirme, karşılaştırma ve hata analizi
+1. Data loading and exploratory data analysis (EDA)
+2. Text preprocessing (HTML cleaning, tokenization, stop word removal, lemmatization)
+3. Word cloud and frequency analysis
+4. TF-IDF vectorization (bigram, 50,000 features) and data splitting
+5. Model training, optimization, and cross-validation
+6. Model evaluation, comparison, and error analysis
 
-## Kullanılan Kütüphaneler
+## Libraries Used
 
 `numpy` · `pandas` · `matplotlib` · `seaborn` · `scikit-learn` · `statsmodels` · `nltk` · `textblob` · `wordcloud` · `beautifulsoup4`
 
-## Veri Seti
+## Dataset
 
 [IMDB Dataset of 50K Movie Reviews](https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews)
 
-## Kullanım
+## Usage
 
 ```bash
 pip install numpy pandas matplotlib seaborn scikit-learn statsmodels nltk textblob wordcloud beautifulsoup4
