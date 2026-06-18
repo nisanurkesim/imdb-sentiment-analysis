@@ -49,7 +49,7 @@ En iyi model olarak **Lojistik Regresyon** önerilmektedir: en yüksek Accuracy/
 
 ## Veri Seti
 
-[IMDB Dataset of 50K Movie Reviews](https://www.kaggle.com/datasets/lakshmipathi/imdb-dataset-of-50k-movie-reviews)
+[IMDB Dataset of 50K Movie Reviews](https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews)
 
 ## Kullanım
 
